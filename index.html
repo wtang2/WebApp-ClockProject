@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Clock</title>
+    <link rel="stylesheet" type="text/css" href="styles.css"/>
+    <meta content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+</head>
+<body>
+
+
+<div id="stopwatch" class="page">
+    <header>
+        <h1>Stopwatch</h1>
+    </header>
+
+    <div class="stopwatch-content">
+        <div class="counter">
+            <p class="lap-time">00:00.00</p>
+
+            <p class="total-time">00:00.00</p>
+        </div>
+        <div class="buttons">
+            <button class="button-start left-button">Start</button>
+            <button class="button-lap right-button disabled">Lap</button>
+        </div>
+        <ul class="laps"></ul>
+    </div>
+</div>
+
+<div id="worldclock" class="page">
+    <header>
+        <h1>World Clock</h1>
+    </header>
+    <ul class="worldclock-list"></ul>
+</div>
+
+
+<div id="timer" class="page ">
+    <header>
+        <h1>Timer</h1>
+    </header>
+    <div class="timer-content">
+        <div class="counter" style="display: none;">
+            <!--<div class="timerclock">-->
+            <!--<span id="hour"></span>-->
+            <!--<span id="minutes"></span>-->
+            <!--<span id="second"></span>-->
+            <!--</div>-->
+            <p class="total-time">00:00:00</p>
+
+        </div>
+        <div class="inputs">
+            <input class="hours" type="number" name="hours" max="100" min="0" value="0"/>
+            <input class="minutes" type="number" name="minutes" max="59" min="0" value="1"/>
+        </div>
+        <div class="buttons">
+            <button class="button-start left-button">Start</button>
+            <button class="button-pause right-button disabled">Pause</button>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <ul>
+        <li><a id="worldclock-link" href="#worldclock"><span>✈</span><br/> World Clock</a></li>
+        <li><a id="timer-link" href="#timer"><span>◴</span><br/>Timer</a></li>
+        <li><a id="stopwatch-link" href="#stopwatch"> <span>◷</span><br/>Stopwatch</a></li>
+    </ul>
+</footer>
+
+
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="clock.js"></script>
+
+<script>
+    $(window).ready(function(){
+        handlePage();
+        WorldClock.init();
+        Stopwatch.init();
+        Timer.init();
+    })
+
+</script>
+
+</body>
+</html>
